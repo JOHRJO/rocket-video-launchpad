@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
+  const affiliateLinkUrl = 'https://jvz6.com/c/3324701/416541/';
+
   return (
     <section className="py-20 bg-gradient-to-b from-rocket-blue to-black">
       <div className="container mx-auto px-6">
@@ -22,11 +24,18 @@ const CTA = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="btn-primary text-lg px-8 py-6 flex items-center gap-2">
+              <Button 
+                className="btn-primary text-lg px-8 py-6 flex items-center gap-2"
+                onClick={() => window.open(affiliateLinkUrl, '_blank')}
+              >
                 Get Started Now
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" className="border-rocket-purple text-white text-lg px-8 py-6">
+              <Button 
+                variant="outline" 
+                className="border-rocket-purple text-white text-lg px-8 py-6"
+                onClick={() => window.open(affiliateLinkUrl, '_blank')}
+              >
                 Watch Demo
               </Button>
             </div>
@@ -45,3 +54,4 @@ const CTA = () => {
 };
 
 export default CTA;
+
