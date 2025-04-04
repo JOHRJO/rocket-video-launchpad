@@ -4,6 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Play } from 'lucide-react';
 
 const Navbar = () => {
+  const affiliateLinkUrl = 'https://jvz6.com/c/3324701/416541/';
+  
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open(affiliateLinkUrl, '_blank');
+    console.log('Demo button clicked');
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-rocket-blue/95 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -21,10 +29,19 @@ const Navbar = () => {
         </div>
         
         <div>
-          <Button className="bg-rocket-orange hover:bg-rocket-orange/90 text-white flex items-center gap-2">
-            <Play size={16} />
-            Demo Video
-          </Button>
+          <a 
+            href={affiliateLinkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button 
+              className="bg-rocket-orange hover:bg-rocket-orange/90 text-white flex items-center gap-2"
+              onClick={handleDemoClick}
+            >
+              <Play size={16} />
+              Demo Video
+            </Button>
+          </a>
         </div>
       </div>
     </nav>

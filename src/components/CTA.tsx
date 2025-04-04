@@ -6,6 +6,12 @@ import { ArrowRight } from 'lucide-react';
 const CTA = () => {
   const affiliateLinkUrl = 'https://jvz6.com/c/3324701/416541/';
 
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open(affiliateLinkUrl, '_blank');
+    console.log('Button clicked, opening:', affiliateLinkUrl);
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-rocket-blue to-black">
       <div className="container mx-auto px-6">
@@ -24,20 +30,33 @@ const CTA = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
-                className="btn-primary text-lg px-8 py-6 flex items-center gap-2"
-                onClick={() => window.open(affiliateLinkUrl, '_blank')}
+              <a 
+                href={affiliateLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
               >
-                Get Started Now
-                <ArrowRight size={18} />
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-rocket-purple text-white text-lg px-8 py-6"
-                onClick={() => window.open(affiliateLinkUrl, '_blank')}
+                <Button 
+                  className="btn-primary text-lg px-8 py-6 flex items-center gap-2 w-full"
+                  onClick={handleButtonClick}
+                >
+                  Get Started Now
+                  <ArrowRight size={18} />
+                </Button>
+              </a>
+              <a 
+                href={affiliateLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
               >
-                Watch Demo
-              </Button>
+                <Button 
+                  variant="outline" 
+                  className="border-rocket-purple text-white text-lg px-8 py-6 w-full"
+                >
+                  Watch Demo
+                </Button>
+              </a>
             </div>
             
             <div className="mt-8 text-white/60 flex justify-center items-center gap-2">
@@ -54,4 +73,3 @@ const CTA = () => {
 };
 
 export default CTA;
-
