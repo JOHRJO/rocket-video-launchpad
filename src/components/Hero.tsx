@@ -4,6 +4,14 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Video } from 'lucide-react';
 
 const Hero = () => {
+  const affiliateLinkUrl = 'https://jvz6.com/c/3324701/416541/';
+  
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open(affiliateLinkUrl, '_blank');
+    console.log('Button clicked, opening:', affiliateLinkUrl);
+  };
+
   return (
     <section className="pt-32 pb-20">
       <div className="container mx-auto px-6">
@@ -18,14 +26,34 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button className="btn-primary text-lg flex items-center gap-2">
-                Get Started Now
-                <ArrowRight size={18} />
-              </Button>
-              <Button variant="outline" className="border-rocket-purple text-white text-lg flex items-center gap-2">
-                <Video size={18} />
-                See Examples
-              </Button>
+              <a 
+                href={affiliateLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button 
+                  className="btn-primary text-lg flex items-center gap-2 w-full"
+                  onClick={handleButtonClick}
+                >
+                  Get Started Now
+                  <ArrowRight size={18} />
+                </Button>
+              </a>
+              <a 
+                href={affiliateLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button 
+                  variant="outline" 
+                  className="border-rocket-purple text-white text-lg flex items-center gap-2 w-full"
+                >
+                  <Video size={18} />
+                  See Examples
+                </Button>
+              </a>
             </div>
             
             <div className="flex items-center gap-3">
