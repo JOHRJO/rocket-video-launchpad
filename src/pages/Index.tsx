@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import OTOSection from '@/components/OTOSection';
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <Features />
       <Testimonials />
       <Pricing />
+      <OTOSection />
       <FAQ />
       <CTA />
       <Footer />
